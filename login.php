@@ -14,7 +14,6 @@
     if ($conn->connect_error) {
         die ("Connection failed: " . $conn->connected_error);
     }
-    echo "Connected successfully <br>";
 
     $sql = "SELECT password FROM user WHERE username = '" . $loginuser."'";
     $result = $conn ->query($sql);
@@ -23,14 +22,16 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
           if($row["password"] == $loginPass){
-            echo "Login Succes.";
+            echo "0";
           }
           else {
-            echo "Wrong password or username.";
+            //Wrong password or usrname
+            echo "1";
           }
         }
       } else {
-        echo "Username does not exit";
+        //Username doesnot exit
+        echo "2";
       }
       $conn->close();
 ?>

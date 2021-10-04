@@ -18,13 +18,13 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
     die ("Connection failed: " . $conn->connected_error);
 }
-echo "Connected successfully <br>";
 
 $sql = "SELECT password FROM user WHERE username = '" . $loginuser."'";
 $result = $conn ->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "Username taken.";
+    //Username taken
+    echo "1";
 
 } else {
     echo "Creating user...";
