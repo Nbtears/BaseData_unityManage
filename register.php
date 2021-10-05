@@ -33,6 +33,11 @@ if ($result->num_rows > 0) {
 
     if ($conn->query($sql2) === TRUE) {
     echo "New record created successfully";
+    
+    $sql3 = "INSERT INTO sesion (user) VALUES ('" . $loginuser . "')";
+    if ($conn->query($sql3) === FALSE) {
+      echo "Error: " . $sql . "<br>" . $conn->error;}
+
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }
