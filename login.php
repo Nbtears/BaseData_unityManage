@@ -7,9 +7,9 @@
 
     $loginuser = $_POST["loginUser"];
     $loginPass = $_POST["loginPass"];
+    $logintime = $_POST["loginTime"];
 
-
-    $conn = new mysqli($servername, $username, $password,$dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die ("Connection failed: " . $conn->connected_error);
@@ -29,7 +29,7 @@
             
           }
           else {
-            //Wrong password or usrname
+            //Wrong password or username
             echo "1";
           }
         }
