@@ -15,7 +15,6 @@
     if ($result->num_rows > 0){
         $row = $result->fetch_assoc();
         $loginuser = $row["user"];
-        echo $loginuser;
     }
 
     $sql2 = "SELECT MAX(rep_flex),MAX(rep_sup) FROM game, sesion WHERE game.sesion = sesion.id AND Sesion.user = '" . $loginuser."'";
@@ -25,8 +24,9 @@
         $rows = array();
         while($row = $result->fetch_assoc()){
             $rows[] = $row;
+            echo "".$row["MAX(rep_flex)"]."-".$row["MAX(rep_sup)"];
         }
-        echo json_encode($rows);
+        //echo json_encode($rows);
     } 
     
     else {
