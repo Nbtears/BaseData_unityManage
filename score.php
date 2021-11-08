@@ -30,7 +30,7 @@
     } 
     
     else {
-        echo "0";
+        echo "0-0";
     }
     $conn->close();
 

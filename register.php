@@ -34,7 +34,7 @@
       if ($conn->query($sql2) === TRUE) {
       echo "New record created successfully";
       
-      $sql3 = "INSERT INTO sesion (user) VALUES ('" . $loginuser . "')";
+      $sql3 = "INSERT INTO sesion (user,duration) VALUES ('" . $loginuser . "', '" . $loginTime . "')";
       if ($conn->query($sql3) === FALSE) {
         echo "Error: " . $sql . "<br>" . $conn->error;}
 
