@@ -23,7 +23,7 @@
         while($row = $result->fetch_assoc()) {
           if($row["password"] == $loginPass){
             echo "0";
-            $sql2 = "INSERT INTO sesion (user,duration) VALUES ('" . $loginuser . "', '" . $loginTime . "')";
+            $sql2 = "INSERT INTO sesion (user,duration) VALUES ('" . $loginuser . "', '" . $logintime . "')";
             if ($conn->query($sql2) === FALSE) {
               echo "Error: " . $sql . "<br>" . $conn->error;}
             

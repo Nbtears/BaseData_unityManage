@@ -12,6 +12,7 @@
   $injury = $_POST["injuryuser"];
   $clinic = $_POST["clinicuser"];
   $age = $_POST["ageuser"];
+  $logintime = $_POST["loginTime"];
 
   $conn = new mysqli($servername, $username, $password,$dbname);
 
@@ -34,7 +35,7 @@
       if ($conn->query($sql2) === TRUE) {
       echo "New record created successfully";
       
-      $sql3 = "INSERT INTO sesion (user,duration) VALUES ('" . $loginuser . "', '" . $loginTime . "')";
+      $sql3 = "INSERT INTO sesion (user,duration) VALUES ('" . $loginuser . "', '" . $logintime . "')";
       if ($conn->query($sql3) === FALSE) {
         echo "Error: " . $sql . "<br>" . $conn->error;}
 
