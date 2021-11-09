@@ -3,7 +3,7 @@
     $username = "root";
     $password = "";
     $dbname = "save_the_axo";
-    $score = "12";
+    $score = $_POST["finalScore"];
 
     //Conection
     $conn = new mysqli($servername, $username, $password,$dbname);
